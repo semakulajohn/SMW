@@ -14,5 +14,6 @@ namespace SMW.DAL.Interface
         Project GetProject(long projectId);
         long SaveProject(ProjectDTO project, string userId);
         void MarkAsDeleted(long projectId, string userId);
+        IEnumerable<Project> GetAllClientProjects(string clientId);
     }
 }

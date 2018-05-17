@@ -139,6 +139,7 @@ namespace SMW.Admin
 .Include("~/app/scripts/controllers/User.js")
  .Include("~/app/scripts/controllers/project.js")
  .Include("~/app/scripts/controllers/property.js")
+ .Include("~/app/scripts/controllers/client.js")
 .Include("~/app/scripts/controllers/dashboard.js")
 
 .Include("~/app/scripts/controllers/application.js")

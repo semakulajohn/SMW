@@ -46,9 +46,13 @@ namespace SMW.BAL.Concrete
         {
             var results = this._dataService.GetAllProjects();
             return MapEFToModel(results);
-        } 
+        }
 
-       
+        public IEnumerable<Project> GetAllClientProjects(string clientId)
+        {
+            var results = this._dataService.GetAllClientProjects(clientId);
+            return MapEFToModel(results);
+        } 
         public long SaveProject(Project project, string userId)
         {
             var projectDTO = new DTO.ProjectDTO()

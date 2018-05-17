@@ -77,33 +77,34 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
              }
          })
    
-          //.state('estate-house-edit', {
-          //    url: "/houses/:action/:estateId/:houseId",
-          //    templateUrl: "/app/views/house/edit.html",
-          //    data: {
-          //        pageTitle: 'Estate House edit',
-          //        pageDesc: ''
-          //    },
-          //    controller: function ($scope, $stateParams) {
-          //        $scope.action = $stateParams.action;
-          //        $scope.houseId = $stateParams.houseId;
-          //        $scope.estateId = $stateParams.estateId;
-          //        $scope.defaultTab = 'edit';
-          //    }
-          //})
+          .state('client-Project-edit', {
+              url: "/project/:action/:projectId/:mediaFolderId/:clientId",
+              templateUrl: "/app/views/project/edit.html",
+              data: {
+                  pageTitle: 'Client Project edit',
+                  pageDesc: ''
+              },
+              controller: function ($scope, $stateParams) {
+                  $scope.action = $stateParams.action;
+                  $scope.projectId = $stateParams.projectId;
+                  $scope.mediaFolderId = $stateParams.mediaFolderId;
+                  $scope.clientId = $stateParams.clientId;
+                  $scope.defaultTab = 'edit';
+              }
+          })
 
-          //.state('estate-houses', {
-          //    url: "/houses/:estateId",
-          //    templateUrl: "/app/views/estate/estate-house.html",
-          //    data: {
-          //        pageTitle: 'Estate Houses',
-          //        pageDesc: ''
-          //    },
-          //    controller: function ($scope, $stateParams) {
-          //        $scope.estateId = $stateParams.estateId;
+          .state('client-projects', {
+              url: "/projects/:clientId",
+              templateUrl: "/app/views/client/client-project.html",
+              data: {
+                  pageTitle: 'Client Projects',
+                  pageDesc: ''
+              },
+              controller: function ($scope, $stateParams) {
+                  $scope.clientId = $stateParams.clientId;
 
-          //    }
-          //})
+              }
+          })
 
          //properties
      .state('properties', {
@@ -141,6 +142,27 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
             $scope.defaultTab = 'edit';
         }
     })
+
+           //clients
+     .state('clients', {
+         abstract: true,
+         url: "/clients",
+         templateUrl: "/app/views/_common/content_empty.html",
+         data: {
+             pageTitle: 'Clients'
+         }
+     })
+
+     .state('clients.list', {
+         url: "/clients",
+         templateUrl: "/app/views/client/list.html",
+         data: {
+             pageTitle: 'Cleints',
+         },
+         controller: function ($scope, $stateParams) {
+
+         }
+     })
 
          
     //Search

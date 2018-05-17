@@ -325,6 +325,8 @@
     <Content Include="app\scripts\services\template\tour.js" />
     <Content Include="app\scripts\services\template\wizard.js" />
     <Content Include="app\styles\isteven-multi-select.css" />
+    <Content Include="app\views\client\client-project.html" />
+    <Content Include="app\views\client\list.html" />
     <Content Include="app\views\dashboard.html" />
     <Content Include="app\views\modal\modalClient.html" />
     <Content Include="app\views\project\edit.html" />

@@ -42,7 +42,13 @@ namespace SMW.Admin.Controllers
                 return _projectService.GetAllProjects();
             }
 
-                 
+            [HttpGet]
+            [ActionName("GetAllClientProjects")]
+            public IEnumerable<Project> GetAllClientProjects(string clientId)
+            {
+                return _projectService.GetAllClientProjects(clientId);
+            }
+
 
             [HttpGet]
             [ActionName("Delete")]

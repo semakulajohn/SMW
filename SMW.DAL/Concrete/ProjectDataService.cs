@@ -29,6 +29,13 @@ namespace SMW.DAL.Concrete
             return this.UnitOfWork.Get<Project>().AsQueryable().Where(e => e.Deleted == false); 
         }
 
+
+
+        public IEnumerable<Project> GetAllClientProjects(string clientId)
+        {
+            return this.UnitOfWork.Get<Project>().AsQueryable().Where(e => e.Deleted == false && e.ClientId == clientId );
+        }
+
         public Project GetProject(long projectId)
         {
             return this.UnitOfWork.Get<Project>().AsQueryable()

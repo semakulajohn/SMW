@@ -13,6 +13,7 @@ namespace SMW.BAL.Interface
         Project GetProject(long projectId);
         long SaveProject(Project project, string userId);
         void MarkAsDeleted(long projectId, string userId);
+        IEnumerable<Project> GetAllClientProjects(string clientId);
 
       
     }

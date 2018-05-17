@@ -59,49 +59,17 @@
                                     <div class="form-group col-sm-6" ng-controller="NavController">
      <div ng-repeat="role in user.UserRoles">
        <!-- <div ng-if="role !='admin'">-->
-            <div class="col-sm-12">
-                <a class="btn btn-danger btn-sm m-b-xs" ng-click="selectClient()"><i class="fa fa-plus"></i> Attach Client</a>
-            </div>
+         <div ng-if="project.ClientId == null">
+             <div class="col-sm-12">
+                 <a class="btn btn-danger btn-sm m-b-xs" ng-click="selectClient()"><i class="fa fa-plus"></i> Attach Client</a>
+             </div>
+         </div>
+            
         <!-- </div> -->
     </div>
 </div>
                                     </div>
-                                    <!--<div class="row">
-
-
-                                        <div class="form-group col-sm-6">
-                                            <div class="col-sm-12">
-                                                <label>Location</label>
-                                                <textarea ng-readonly="readOnly" name="location" rows="6" class="form-control" ng-model="estate.Location"></textarea>
-                                            
-
-                                                <span ng-show="form.location.$invalid">
-                                                    <span ng-show="form.location.$error.required" class="help-block error"><i class="fa fa-warning"></i>Location is a required field.</span>
-                                                </span>
-
-                                            </div>
-                                        </div>
-
-                                       
-                                        <div class="hr-line-dashed"></div>
-
-
-                                        <div class="row">
-                                            <div class="form-group col-sm-6">
-                                                <div class="col-sm-12">
-                                                    <label>Number of Houses</label>
-                                                    <input ng-readonly="readOnly" name="numberOfHouses" class="form-control" ng-model="estate.NumberOfHouses" ng-pattern="/^\-?\d+((\.)\d+)?$/" ng-maxlength="50" ng-class="{ errorinput: form.numberOfHouses.$invalid }">
-                                                    <span ng-show="form.numberOfHouses.$invalid">
-                                                        <span ng-show="form.numberOfHouses.$error.required" class="help-block error"><i class="fa fa-warning"></i>Number of Houses is required.</span>
-                                                        <span ng-show="form.numberOfHouses.$error.pattern" class="help-block error margin-bottom-00 ">
-                                                            <i class="fa fa-warning"></i> Invalid format, should be a number(remove any letters if any)
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                              
-                                        </div>-->
+                                  
                                         <div class="form-group">
                                             <div class="col-md-2">
                                             </div>
