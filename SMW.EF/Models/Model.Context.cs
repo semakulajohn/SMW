@@ -37,8 +37,10 @@ namespace SMW.EF.Models
         public virtual DbSet<MediaType> MediaTypes { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<WebQuery> WebQueries { get; set; }
-        public virtual DbSet<Property> Properties { get; set; }
         public virtual DbSet<Media> Media { get; set; }
+        public virtual DbSet<Service> Services { get; set; }
+        public virtual DbSet<Property> Properties { get; set; }
+        public virtual DbSet<PropertyType> PropertyTypes { get; set; }
     
         public virtual ObjectResult<Media_GetDescendants_Result> Media_GetDescendants(Nullable<long> mediaId)
         {

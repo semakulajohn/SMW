@@ -45,6 +45,7 @@
     <Compile Include="ProjectDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyDTO.cs" />
+    <Compile Include="ServiceDTO.cs" />
     <Compile Include="WebQueryDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

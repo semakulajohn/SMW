@@ -24,11 +24,11 @@ namespace SMW.Library
 
 
 
-        public enum Status : int
+        public enum Type : int
         {
-            Open = 1,
-            Closed = 2,
-            OnGoing = 3
+            ForSale = 1,
+            ForRent = 2,
+          
         }
     }
 }

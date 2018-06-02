@@ -30,6 +30,9 @@ namespace SMW.EF.Models
             this.WebQueries = new HashSet<WebQuery>();
             this.WebQueries1 = new HashSet<WebQuery>();
             this.AspNetRoles = new HashSet<AspNetRole>();
+            this.Services = new HashSet<Service>();
+            this.Services1 = new HashSet<Service>();
+            this.Services2 = new HashSet<Service>();
             this.Properties = new HashSet<Property>();
             this.Properties1 = new HashSet<Property>();
             this.Properties2 = new HashSet<Property>();
@@ -78,6 +81,9 @@ namespace SMW.EF.Models
         public virtual ICollection<WebQuery> WebQueries { get; set; }
         public virtual ICollection<WebQuery> WebQueries1 { get; set; }
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
+        public virtual ICollection<Service> Services { get; set; }
+        public virtual ICollection<Service> Services1 { get; set; }
+        public virtual ICollection<Service> Services2 { get; set; }
         public virtual ICollection<Property> Properties { get; set; }
         public virtual ICollection<Property> Properties1 { get; set; }
         public virtual ICollection<Property> Properties2 { get; set; }

@@ -250,6 +250,7 @@
     <Compile Include="Controllers\MediaApiController.cs" />
     <Compile Include="Controllers\ProjectApiController.cs" />
     <Compile Include="Controllers\PropertyApiController.cs" />
+    <Compile Include="Controllers\ServiceApiController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
@@ -277,6 +278,7 @@
     <Content Include="app\scripts\controllers\project.js" />
     <Content Include="app\scripts\controllers\property.js" />
     <Content Include="app\scripts\controllers\search.js" />
+    <Content Include="app\scripts\controllers\service.js" />
     <Content Include="app\scripts\controllers\template\alerts.js" />
     <Content Include="app\scripts\controllers\template\calendar.js" />
     <Content Include="app\scripts\controllers\template\chartjs.js" />
@@ -333,6 +335,8 @@
     <Content Include="app\views\project\list.html" />
     <Content Include="app\views\property\edit.html" />
     <Content Include="app\views\property\list.html" />
+    <Content Include="app\views\service\edit.html" />
+    <Content Include="app\views\service\list.html" />
     <Content Include="app\views\_common\Breadcrumb.html" />
     <Content Include="app\views\_common\content.html" />
     <Content Include="app\views\_common\content_blank.html" />

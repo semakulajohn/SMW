@@ -11,7 +11,7 @@ namespace SMW.Models
         public long PropertyId { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
-        public bool Status { get; set; }
+        public long PropertyTypeId { get; set; }
         public long MediaFolderId { get; set; }
         public double PropertyFee { get; set; }
         public System.DateTime CreatedOn { get; set; }
@@ -21,6 +21,8 @@ namespace SMW.Models
         public bool Deleted { get; set; }
         public string DeletedBy { get; set; }
         public Nullable<System.DateTime> DeletedOn { get; set; }
+        public string PropertyTypeName { get; set; }
+    
         
     }
 }

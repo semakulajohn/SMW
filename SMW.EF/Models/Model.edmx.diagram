@@ -29,17 +29,24 @@
         <AssociationConnector Association="SMWModel.FK_dbo_WebQuery_UpdatedBy" ManuallyRouted="false" />
         <AssociationConnector Association="SMWModel.Fk_dbo_ExtensionType_MediaTypeId" ManuallyRouted="false" />
         <AssociationConnector Association="SMWModel.AspNetUserRoles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SMWModel.Property" Width="1.5" PointX="8.25" PointY="6.125" />
-        <AssociationConnector Association="SMWModel.FK_dbo_Property_CreatedBy" />
-        <AssociationConnector Association="SMWModel.FK_dbo_Property_DeletedBy" />
-        <AssociationConnector Association="SMWModel.FK_dbo_Property_UpdatedBy" />
         <EntityTypeShape EntityType="SMWModel.Media" Width="1.5" PointX="6" PointY="3.75" />
         <AssociationConnector Association="SMWModel.FK_dbo_Comment_MediaId" />
         <AssociationConnector Association="SMWModel.FK_Media_ExtensionType" />
         <AssociationConnector Association="SMWModel.FK_dbo_Project_MediaId" />
-        <AssociationConnector Association="SMWModel.FK_dbo_Property_MediaId" />
         <AssociationConnector Association="SMWModel.FK_Media_MediaType" />
-      </Diagram>
+        <EntityTypeShape EntityType="SMWModel.Service" Width="1.5" PointX="11.25" PointY="8.5" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Service_CreatedBy" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Service_DeletedBy" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Service_UpdatedBy" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Service_MediaId" />
+        <EntityTypeShape EntityType="SMWModel.Property" Width="1.5" PointX="8.25" PointY="6.375" />
+        <EntityTypeShape EntityType="SMWModel.PropertyType" Width="1.5" PointX="6" PointY="0.75" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Property_CreatedBy" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Property_DeletedBy" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Property_UpdatedBy" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Property_MediaId" />
+        <AssociationConnector Association="SMWModel.FK_dbo_Property_PropertyTypeId" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

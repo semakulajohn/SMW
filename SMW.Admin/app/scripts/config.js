@@ -143,6 +143,43 @@ function configState($stateProvider, $urlRouterProvider, $compileProvider) {
         }
     })
 
+
+          //services
+     .state('services', {
+         abstract: true,
+         url: "/services",
+         templateUrl: "/app/views/_common/content_empty.html",
+         data: {
+             pageTitle: 'Services'
+         }
+     })
+
+    .state('services.list', {
+        url: "/services",
+        templateUrl: "/app/views/service/list.html",
+        data: {
+            pageTitle: 'Services',
+        },
+        controller: function ($scope, $stateParams) {
+
+        }
+    })
+
+
+    .state('service-edit', {
+        url: "/services/:action/:serviceId/:mediaFolderId",
+        templateUrl: "/app/views/service/edit.html",
+        data: {
+            pageTitle: 'Service edit',
+            pageDesc: ''
+        },
+        controller: function ($scope, $stateParams) {
+            $scope.action = $stateParams.action;
+            $scope.serviceId = $stateParams.serviceId;
+            $scope.mediaFolderId = $stateParams.mediaFolderId;
+            $scope.defaultTab = 'edit';
+        }
+    })
            //clients
      .state('clients', {
          abstract: true,

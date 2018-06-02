@@ -46,9 +46,18 @@ namespace SMW.BAL.Concrete
         {
             var results = this._dataService.GetAllProperties();
             return MapEFToModel(results);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<PropertyType> GetAllPropertyTypes()
+        {
+            var results = this._dataService.GetAllPropertyTypes();
+            return MapEFToModel(results);
         } 
 
-       
         public long SaveProperty(Property property, string userId)
         {
             var propertyDTO = new DTO.PropertyDTO()
@@ -58,7 +67,7 @@ namespace SMW.BAL.Concrete
                 PropertyFee = property.PropertyFee,
                 MediaFolderId = property.MediaFolderId,
                 Description = property.Description,
-                Status = property.Status,
+                PropertyTypeId = property.PropertyTypeId,
                 
                     
 
@@ -94,6 +103,30 @@ namespace SMW.BAL.Concrete
             return list;
         }
 
+
+        public PropertyType MapEFToModel(EF.Models.PropertyType data)
+        {
+
+
+            var propertyType = new PropertyType()
+            {
+                PropertyTypeId = data.PropertyTypeId,
+                Name = data.Name,
+
+
+            };
+            return propertyType;
+        }
+
+        private IEnumerable<PropertyType> MapEFToModel(IEnumerable<EF.Models.PropertyType> data)
+        {
+            var list = new List<PropertyType>();
+            foreach (var result in data)
+            {
+                list.Add(MapEFToModel(result));
+            }
+            return list;
+        }
         /// <summary>
         /// Maps Property EF object to Property Model Object and
         /// returns the Property model object.
@@ -102,19 +135,32 @@ namespace SMW.BAL.Concrete
         /// <returns>Property Model Object.</returns>
         public Property MapEFToModel(EF.Models.Property data)
         {
-          
+            var propertyTypeName = string.Empty;
+
+            if (data.PropertyId != 0)
+            {
+
+               
+                if (data.PropertyType != null)
+                {
+                    propertyTypeName = data.PropertyType.Name;
+                }
+                
+
+            }
             var property = new Property()
             {
                 PropertyId = data.PropertyId,
                 Location = data.Location,
                 Description = data.Description,
                 PropertyFee = data.PropertyFee,
+                PropertyTypeId = data.PropertyTypeId,
                 MediaFolderId = data.MediaFolderId,
                 CreatedOn = data.CreatedOn,
                 Timestamp = data.Timestamp,
                 CreatedBy = _userService.GetUserFullName(data.AspNetUser),
                 UpdatedBy = _userService.GetUserFullName(data.AspNetUser1),
-               
+                PropertyTypeName = propertyTypeName,
 
             };
             return property;

@@ -18,7 +18,8 @@ namespace SMW.EF.Models
         {
             this.Comment = new HashSet<Comment>();
             this.Project = new HashSet<Project>();
-            this.Property = new HashSet<Property>();
+            this.Services = new HashSet<Service>();
+            this.Properties = new HashSet<Property>();
         }
     
         public long MediaId { get; set; }
@@ -37,7 +38,8 @@ namespace SMW.EF.Models
         public virtual ICollection<Comment> Comment { get; set; }
         public virtual ExtensionType ExtensionType { get; set; }
         public virtual ICollection<Project> Project { get; set; }
-        public virtual ICollection<Property> Property { get; set; }
         public virtual MediaType MediaType { get; set; }
+        public virtual ICollection<Service> Services { get; set; }
+        public virtual ICollection<Property> Properties { get; set; }
     }
 }

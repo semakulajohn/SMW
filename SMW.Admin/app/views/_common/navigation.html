@@ -31,6 +31,14 @@
                 <li ui-sref-active="active"><a ui-sref="projects.list">All Projects</a></li>
             </ul>
         </li>
+
+        <li ng-if="isAdmin" ng-class="{active: $state.includes('services')}">
+            <a href="#"><span class="nav-label">Services</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{in: $state.includes('services')}">
+                <li ui-sref-active="active"><a ui-sref="services.list">Service List</a></li>
+            </ul>
+        </li>
+
        
         <li ng-if="isAdmin"  ng-class="{active: $state.includes('properties')}">
             <a href="#"><span class="nav-label">Properties</span><span class="fa arrow"></span> </a>

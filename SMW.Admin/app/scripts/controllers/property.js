@@ -13,6 +13,9 @@
         var uploader = $scope.uploader = new FileUploader({
             url: '/upload/?parentId=' + $scope.mediaFolderId
         });
+        $http.get('/webapi/PropertyApi/GetAllPropertyTypes').success(function (data, status) {
+            $scope.propertyTypes = data;
+        });
 
         $scope.mediaTypes = 2;
 
@@ -47,6 +50,7 @@
                         PropertyId: m.PropertyId,
                         Location: m.Location,
                         Description: m.Description,
+                        PropertyTypeId : m.PropertyTypeId,
                         PropertyFee: m.PropertyFee,
                         MediaFolderId :m.MediaFolderId,
                         CreatedOn: m.CreatedOn,
@@ -71,6 +75,7 @@
                     Location : property.Location,
                     Description : property.Description,
                     PropertyFee: property.PropertyFee,
+                    PropertyTypeId : property.PropertyTypeId,
                     CreatedOn: property.CreatedOn,
                     MediaFolderId: property.MediaFolderId,
                     Timestamp : property.Timestamp,
@@ -286,13 +291,13 @@ angular
 
                  { name: 'PropertyFee', field: 'PropertyFee' },
 
-
+                    { name: 'Property Type', field: 'PropertyTypeName' },
                
 
 
 
             ];
-
+          
 
 
 

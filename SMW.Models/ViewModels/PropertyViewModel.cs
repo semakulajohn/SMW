@@ -11,7 +11,7 @@ namespace SMW.Models.ViewModels
         public long PropertyId { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
-        public bool Status { get; set; }
+        public string TypeName { get; set; }
         public long MediaFolderId { get; set; }
         public double PropertyFee { get; set; }
         

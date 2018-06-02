@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMW.Admin", "SMW.Admin\SMW.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMW.Library", "SMW.Library\SMW.Library.csproj", "{FD2D4C42-01B6-4BA1-93A8-6A5BDDB54D83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMW.Web", "SMW.Web\SMW.Web.csproj", "{22F6982A-A4C7-4C80-A560-0CEF87021683}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{FD2D4C42-01B6-4BA1-93A8-6A5BDDB54D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD2D4C42-01B6-4BA1-93A8-6A5BDDB54D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD2D4C42-01B6-4BA1-93A8-6A5BDDB54D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F6982A-A4C7-4C80-A560-0CEF87021683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F6982A-A4C7-4C80-A560-0CEF87021683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F6982A-A4C7-4C80-A560-0CEF87021683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F6982A-A4C7-4C80-A560-0CEF87021683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -28,6 +28,11 @@ namespace SMW.DAL.Concrete
             return this.UnitOfWork.Get<Property>().AsQueryable().Where(e => e.Deleted == false); 
         }
 
+        public IEnumerable<PropertyType> GetAllPropertyTypes()
+        {
+            return this.UnitOfWork.Get<PropertyType>().AsQueryable();
+        }
+
         public Property GetProperty(long propertyId)
         {
             return this.UnitOfWork.Get<Property>().AsQueryable()
@@ -69,7 +74,7 @@ namespace SMW.DAL.Concrete
                 var property = new Property()
                 {
                    
-                    Status = propertyDTO.Status,
+                    PropertyTypeId = propertyDTO.PropertyTypeId,
                     MediaFolderId = mediaFolderId,
                     Location = propertyDTO.Location,
                     PropertyFee = propertyDTO.PropertyFee,
@@ -94,7 +99,7 @@ namespace SMW.DAL.Concrete
                     .FirstOrDefault(e => e.PropertyId == propertyDTO.PropertyId);
                 if (result != null)
                 {
-                    result.Status = propertyDTO.Status; 
+                    result.PropertyTypeId = propertyDTO.PropertyTypeId; 
                     result.Location = propertyDTO.Location;
                     result.PropertyFee = propertyDTO.PropertyFee;
                     result.Description = propertyDTO.Description;

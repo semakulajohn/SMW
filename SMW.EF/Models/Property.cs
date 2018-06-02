@@ -17,7 +17,7 @@ namespace SMW.EF.Models
         public long PropertyId { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
-        public bool Status { get; set; }
+        public long PropertyTypeId { get; set; }
         public long MediaFolderId { get; set; }
         public double PropertyFee { get; set; }
         public System.DateTime CreatedOn { get; set; }
@@ -31,6 +31,7 @@ namespace SMW.EF.Models
         public virtual AspNetUser AspNetUser { get; set; }
         public virtual AspNetUser AspNetUser1 { get; set; }
         public virtual AspNetUser AspNetUser2 { get; set; }
-        public virtual Media Media { get; set; }
+        public virtual Media Medium { get; set; }
+        public virtual PropertyType PropertyType { get; set; }
     }
 }

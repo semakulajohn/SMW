@@ -43,7 +43,12 @@ namespace SMW.Admin.Controllers
                 return _propertyService.GetAllProperties();
             }
 
-                 
+            [HttpGet]
+            [ActionName("GetAllPropertyTypes")]
+            public IEnumerable<PropertyType> GetAllPropertyTypes()
+            {
+                return _propertyService.GetAllPropertyTypes();
+            }
 
             [HttpGet]
             [ActionName("Delete")]

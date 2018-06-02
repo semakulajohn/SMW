@@ -103,6 +103,12 @@
     <Compile Include="Models\Property.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PropertyType.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\WebQuery.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

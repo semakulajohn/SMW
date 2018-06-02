@@ -58,11 +58,13 @@
     <Compile Include="Concrete\MediaService.cs" />
     <Compile Include="Concrete\ProjectService.cs" />
     <Compile Include="Concrete\PropertyService.cs" />
+    <Compile Include="Concrete\ServiceService.cs" />
     <Compile Include="Concrete\UserService.cs" />
     <Compile Include="Interface\ICommentService.cs" />
     <Compile Include="Interface\IMediaService.cs" />
     <Compile Include="Interface\IProjectService.cs" />
     <Compile Include="Interface\IPropertyService.cs" />
+    <Compile Include="Interface\IServiceService.cs" />
     <Compile Include="Interface\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -21,6 +21,7 @@ namespace SMW.DependencyResolver
          Bind(typeof(IProjectService)).To(typeof(ProjectService));
          Bind(typeof(ICommentService)).To(typeof(CommentService));
          Bind(typeof(IMediaService)).To(typeof(MediaService));
+         Bind(typeof(IServiceService)).To(typeof(ServiceService));
 
 
 
@@ -30,6 +31,7 @@ namespace SMW.DependencyResolver
          Bind(typeof(IProjectDataService)).To(typeof(ProjectDataService));
          Bind(typeof(ICommentDataService)).To(typeof(CommentDataService));
          Bind(typeof(IMediaDataService)).To(typeof(MediaDataService));
+         Bind(typeof(IServiceDataService)).To(typeof(ServiceDataService));
      }   
     }
 }

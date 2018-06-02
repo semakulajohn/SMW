@@ -79,6 +79,8 @@
     <Build Include="dbo\tables\Comment.sql" />
     <Build Include="dbo\tables\WebQuery.sql" />
     <Build Include="dbo\tables\Property.sql" />
+    <Build Include="dbo\tables\Service.sql" />
+    <Build Include="dbo\tables\PropertyType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SMW.Database.publish.xml" />
