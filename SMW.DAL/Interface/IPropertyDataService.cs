@@ -15,5 +15,6 @@ namespace SMW.DAL.Interface
         long SaveProperty(PropertyDTO property, string userId);
         void MarkAsDeleted(long propertyId, string userId);
         IEnumerable<PropertyType> GetAllPropertyTypes();
+        IEnumerable<Property> GetAllPropertiesForAParticularPropertyType(long propertyTypeId);
     }
 }

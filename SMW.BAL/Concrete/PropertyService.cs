@@ -52,11 +52,54 @@ namespace SMW.BAL.Concrete
         /// 
         /// </summary>
         /// <returns></returns>
+        public IEnumerable<Property> GetAllPropertiesForAParticularPropertyType(long propertyTypeId)
+        {
+            var results = this._dataService.GetAllPropertiesForAParticularPropertyType(propertyTypeId);
+            return MapEFToModel(results);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<PropertyType> GetAllPropertyTypes()
         {
             var results = this._dataService.GetAllPropertyTypes();
             return MapEFToModel(results);
-        } 
+        }
+
+        public IEnumerable<Property> GetLatestProperties()
+        {
+            var results = GetAllProperties().OrderByDescending(p => p.CreatedOn).Take(6);
+            return results;
+        }
+
+        /// <summary>
+        /// Gets four Properties randomly
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Models.Property> GetFeaturedProperties()
+        {
+            var featuredProperties = new List<Property>();
+            for (int i = 0; i <= 20; i++)
+            {
+                var property = GetRandomProperty();
+                featuredProperties.Add(property);
+            }
+
+            return featuredProperties.GroupBy(p => p.PropertyId).Select(p => p.First()).ToList().Take(4);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Property GetRandomProperty()
+        {
+            var results = _dataService.GetAllProperties().ToList();
+
+            int count = results.Count();
+            int index = new Random().Next(count);
+            return MapEFToModel(results.Skip(index).FirstOrDefault());
+        }
 
         public long SaveProperty(Property property, string userId)
         {

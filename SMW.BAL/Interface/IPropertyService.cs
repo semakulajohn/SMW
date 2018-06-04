@@ -14,5 +14,7 @@ namespace SMW.BAL.Interface
         long SaveProperty(Property property, string userId);
         void MarkAsDeleted(long propertyId, string userId);
         IEnumerable<PropertyType> GetAllPropertyTypes();
+        IEnumerable<Property> GetFeaturedProperties();
+        IEnumerable<Property> GetLatestProperties();
     }
 }

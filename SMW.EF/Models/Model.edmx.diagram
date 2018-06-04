@@ -13,7 +13,6 @@
         <EntityTypeShape EntityType="SMWModel.ExtensionType" Width="1.5" PointX="3.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SMWModel.MediaType" Width="1.5" PointX="1.5" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="SMWModel.Project" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMWModel.WebQuery" Width="1.5" PointX="5.25" PointY="29.125" IsExpanded="true" />
         <AssociationConnector Association="SMWModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_IdentityUser_Id" ManuallyRouted="false" />
         <AssociationConnector Association="SMWModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_IdentityUser_Id" ManuallyRouted="false" />
         <AssociationConnector Association="SMWModel.FK_AspNetUser_CreatedBy" ManuallyRouted="false" />
@@ -25,8 +24,6 @@
         <AssociationConnector Association="SMWModel.FK_dbo_Project_CreatedBy" ManuallyRouted="false" />
         <AssociationConnector Association="SMWModel.FK_dbo_Project_DeletedBy" ManuallyRouted="false" />
         <AssociationConnector Association="SMWModel.FK_dbo_Project_UpdatedBy" ManuallyRouted="false" />
-        <AssociationConnector Association="SMWModel.FK_dbo_WebQuery_DeletedBy" ManuallyRouted="false" />
-        <AssociationConnector Association="SMWModel.FK_dbo_WebQuery_UpdatedBy" ManuallyRouted="false" />
         <AssociationConnector Association="SMWModel.Fk_dbo_ExtensionType_MediaTypeId" ManuallyRouted="false" />
         <AssociationConnector Association="SMWModel.AspNetUserRoles" ManuallyRouted="false" />
         <EntityTypeShape EntityType="SMWModel.Media" Width="1.5" PointX="6" PointY="3.75" />
@@ -46,6 +43,7 @@
         <AssociationConnector Association="SMWModel.FK_dbo_Property_UpdatedBy" />
         <AssociationConnector Association="SMWModel.FK_dbo_Property_MediaId" />
         <AssociationConnector Association="SMWModel.FK_dbo_Property_PropertyTypeId" />
+        <EntityTypeShape EntityType="SMWModel.WebQuery" Width="1.5" PointX="0.75" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

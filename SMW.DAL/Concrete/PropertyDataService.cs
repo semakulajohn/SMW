@@ -33,6 +33,10 @@ namespace SMW.DAL.Concrete
             return this.UnitOfWork.Get<PropertyType>().AsQueryable();
         }
 
+        public IEnumerable<Property> GetAllPropertiesForAParticularPropertyType(long propertyTypeId)
+        {
+            return this.UnitOfWork.Get<Property>().AsQueryable().Where(e => e.Deleted == false && e.PropertyTypeId == propertyTypeId);
+        }
         public Property GetProperty(long propertyId)
         {
             return this.UnitOfWork.Get<Property>().AsQueryable()
@@ -124,13 +128,12 @@ namespace SMW.DAL.Concrete
             var result = this.UnitOfWork.Get<Property>().AsQueryable().Where(e => e.Deleted == false && e.PropertyId == propertyId);
             if (result != null)
             {
-                
-            }
-            //using (var dbContext = new SMWEntities())
-            //{
-            //    dbContext.Mark_Property_And_RelatedData_AsDeleted(PropertyId, userId);
-            //}      
 
+                using (var dbContext = new SMWEntities())
+                {
+                    dbContext.Mark_Property_And_Related_DataAs_Deleted(propertyId, userId);
+                }
+            }
         }
     }
 }

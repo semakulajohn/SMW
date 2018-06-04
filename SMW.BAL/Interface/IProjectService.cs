@@ -14,7 +14,7 @@ namespace SMW.BAL.Interface
         long SaveProject(Project project, string userId);
         void MarkAsDeleted(long projectId, string userId);
         IEnumerable<Project> GetAllClientProjects(string clientId);
-
+        IEnumerable<Project> GetLatestProjects();
       
     }
 }

@@ -254,6 +254,7 @@
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
+    <Compile Include="Controllers\WebQueryApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -298,6 +299,7 @@
     <Content Include="app\scripts\controllers\template\tour.js" />
     <Content Include="app\scripts\controllers\template\wizard.js" />
     <Content Include="app\scripts\controllers\User.js" />
+    <Content Include="app\scripts\controllers\webquery.js" />
     <Content Include="app\scripts\directives\angular-validation-match.js" />
     <Content Include="app\scripts\directives\checklist-model.js" />
     <Content Include="app\scripts\directives\directives.js" />
@@ -337,6 +339,7 @@
     <Content Include="app\views\property\list.html" />
     <Content Include="app\views\service\edit.html" />
     <Content Include="app\views\service\list.html" />
+    <Content Include="app\views\webquery\list.html" />
     <Content Include="app\views\_common\Breadcrumb.html" />
     <Content Include="app\views\_common\content.html" />
     <Content Include="app\views\_common\content_blank.html" />

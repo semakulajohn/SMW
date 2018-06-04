@@ -118,13 +118,12 @@ namespace SMW.DAL.Concrete
             var result = this.UnitOfWork.Get<Service>().AsQueryable().Where(e => e.Deleted == false && e.ServiceId == serviceId);
             if (result != null)
             {
-                
-            }
-            //using (var dbContext = new SMWEntities())
-            //{
-            //    dbContext.Mark_Service_And_RelatedData_AsDeleted(ServiceId, userId);
-            //}      
 
+                using (var dbContext = new SMWEntities())
+                {
+                    dbContext.Mark_Service_And_RelatedData_AsDeleted(serviceId, userId);
+                }
+            }
         }
     }
 }

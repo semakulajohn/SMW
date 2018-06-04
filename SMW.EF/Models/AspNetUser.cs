@@ -27,8 +27,6 @@ namespace SMW.EF.Models
             this.Projects = new HashSet<Project>();
             this.Projects1 = new HashSet<Project>();
             this.Projects2 = new HashSet<Project>();
-            this.WebQueries = new HashSet<WebQuery>();
-            this.WebQueries1 = new HashSet<WebQuery>();
             this.AspNetRoles = new HashSet<AspNetRole>();
             this.Services = new HashSet<Service>();
             this.Services1 = new HashSet<Service>();
@@ -78,8 +76,6 @@ namespace SMW.EF.Models
         public virtual ICollection<Project> Projects { get; set; }
         public virtual ICollection<Project> Projects1 { get; set; }
         public virtual ICollection<Project> Projects2 { get; set; }
-        public virtual ICollection<WebQuery> WebQueries { get; set; }
-        public virtual ICollection<WebQuery> WebQueries1 { get; set; }
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
         public virtual ICollection<Service> Services { get; set; }
         public virtual ICollection<Service> Services1 { get; set; }

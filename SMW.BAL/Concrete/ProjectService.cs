@@ -48,6 +48,12 @@ namespace SMW.BAL.Concrete
             return MapEFToModel(results);
         }
 
+        public IEnumerable<Project> GetLatestProjects()
+        {
+            var results = GetAllProjects().OrderByDescending(p => p.CreatedOn).Take(4);
+            return results;
+        }
+
         public IEnumerable<Project> GetAllClientProjects(string clientId)
         {
             var results = this._dataService.GetAllClientProjects(clientId);

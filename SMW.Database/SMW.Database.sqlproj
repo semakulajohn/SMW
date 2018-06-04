@@ -81,6 +81,9 @@
     <Build Include="dbo\tables\Property.sql" />
     <Build Include="dbo\tables\Service.sql" />
     <Build Include="dbo\tables\PropertyType.sql" />
+    <Build Include="dbo\storedprocedures\Mark_Property_And_RelatedData_AsDeleted.sql" />
+    <Build Include="dbo\storedprocedures\Mark_Project_And_RelatedData_AsDeleted.sql" />
+    <Build Include="dbo\storedprocedures\Mark_Service_And_RelatedData_AsDeleted.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SMW.Database.publish.xml" />

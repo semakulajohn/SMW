@@ -48,5 +48,12 @@ namespace SMW.Web.Controllers
         {
             return _propertyService.GetAllPropertyTypes();
         }
+
+        [HttpGet]
+        [System.Web.Http.ActionName("GetFeaturedProperties")]
+        public IEnumerable<Property> GetFeaturedProperties()
+        {
+            return _propertyService.GetFeaturedProperties();
+        }
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="Concrete\PropertyDataService.cs" />
     <Compile Include="Concrete\ServiceDataService.cs" />
     <Compile Include="Concrete\UserDataService.cs" />
+    <Compile Include="Concrete\WebQueryDataService.cs" />
     <Compile Include="DataServiceBase.cs" />
     <Compile Include="Interface\ICommentDataService.cs" />
     <Compile Include="Interface\IMediaDataService.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Interface\IPropertyDataService.cs" />
     <Compile Include="Interface\IServiceDataService.cs" />
     <Compile Include="Interface\IUserDataService.cs" />
+    <Compile Include="Interface\IWebQueryDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

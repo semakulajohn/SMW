@@ -125,13 +125,12 @@ namespace SMW.DAL.Concrete
             var result = this.UnitOfWork.Get<Project>().AsQueryable().Where(e => e.Deleted == false && e.ProjectId == projectId);
             if (result != null)
             {
-                
-            }
-            //using (var dbContext = new SMWEntities())
-            //{
-            //    dbContext.Mark_project_And_RelatedData_AsDeleted(projectId, userId);
-            //}      
+                using (var dbContext = new SMWEntities())
+                {
+                    dbContext.Mark_Project_And_RelatedData_AsDeleted(projectId, userId);
 
+                }
+            }
         }
     }
 }

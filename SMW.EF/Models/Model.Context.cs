@@ -36,11 +36,11 @@ namespace SMW.EF.Models
         public virtual DbSet<ExtensionType> ExtensionTypes { get; set; }
         public virtual DbSet<MediaType> MediaTypes { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
-        public virtual DbSet<WebQuery> WebQueries { get; set; }
         public virtual DbSet<Media> Media { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Property> Properties { get; set; }
         public virtual DbSet<PropertyType> PropertyTypes { get; set; }
+        public virtual DbSet<WebQuery> WebQueries { get; set; }
     
         public virtual ObjectResult<Media_GetDescendants_Result> Media_GetDescendants(Nullable<long> mediaId)
         {
@@ -76,6 +76,45 @@ namespace SMW.EF.Models
                 new ObjectParameter("MediaId", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Media_SetPath", mediaIdParameter);
+        }
+    
+        public virtual int Mark_Project_And_RelatedData_AsDeleted(Nullable<long> inPutProjectId, string userId)
+        {
+            var inPutProjectIdParameter = inPutProjectId.HasValue ?
+                new ObjectParameter("inPutProjectId", inPutProjectId) :
+                new ObjectParameter("inPutProjectId", typeof(long));
+    
+            var userIdParameter = userId != null ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Mark_Project_And_RelatedData_AsDeleted", inPutProjectIdParameter, userIdParameter);
+        }
+    
+        public virtual int Mark_Property_And_Related_DataAs_Deleted(Nullable<long> inPutPropertyId, string userId)
+        {
+            var inPutPropertyIdParameter = inPutPropertyId.HasValue ?
+                new ObjectParameter("inPutPropertyId", inPutPropertyId) :
+                new ObjectParameter("inPutPropertyId", typeof(long));
+    
+            var userIdParameter = userId != null ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Mark_Property_And_Related_DataAs_Deleted", inPutPropertyIdParameter, userIdParameter);
+        }
+    
+        public virtual int Mark_Service_And_RelatedData_AsDeleted(Nullable<long> inPutServiceId, string userId)
+        {
+            var inPutServiceIdParameter = inPutServiceId.HasValue ?
+                new ObjectParameter("inPutServiceId", inPutServiceId) :
+                new ObjectParameter("inPutServiceId", typeof(long));
+    
+            var userIdParameter = userId != null ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Mark_Service_And_RelatedData_AsDeleted", inPutServiceIdParameter, userIdParameter);
         }
     }
 }
