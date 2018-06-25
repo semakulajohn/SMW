@@ -9,6 +9,10 @@ using SMW.DAL.Interface;
 using SMW.Models;
 using SMW.Helpers;
 using log4net;
+using System.Net.Mail;
+using System.Web;
+using System.IO;
+using System.Configuration;
 
 namespace SMW.BAL.Concrete
 {
@@ -54,12 +58,57 @@ namespace SMW.BAL.Concrete
 
            var webQueryId = this._dataService.SaveWebQuery(webQueryDTO);
 
+           SendEmail(webQueryDTO);
            return webQueryId;
                       
         }
 
-       
 
+
+        //Send off query as email 
+        public void SendEmail(WebQueryDTO query)
+        {
+
+            StringBuilder sb = new StringBuilder();
+            string strNewPath = HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["QueryAsEmail"]);
+            using (StreamReader sr = new StreamReader(strNewPath))
+            {
+                while (!sr.EndOfStream)
+                {
+                    sb.Append(sr.ReadLine());
+                }
+            }
+
+            string body = sb.ToString().Replace("#NAME#", query.Name);
+            body = body.Replace("#PHONE#", query.PhoneNumber);
+            body = body.Replace("#QUERY#", query.Body);
+            body = body.Replace("#EMAIL#", query.EmailAddress);
+
+            Helpers.Email email = new Helpers.Email();
+            email.MailBodyHtml = body;
+           
+            email.MailToAddress = ConfigurationManager.AppSettings["EmailAddressTo"];
+                
+               
+            email.MailFromAddress = ConfigurationManager.AppSettings["no-reply-email"];
+            email.Subject = ConfigurationManager.AppSettings["query_email_subject"];
+
+            try
+            {
+                email.SendMail();
+                logger.Debug("Email sent");
+            }
+            catch (Exception ex)
+            {
+
+                logger.Debug("email Not Sent: " + ex.Message);
+            }
+
+
+
+        }
+
+         
       
         #region Mapping Methods
 
